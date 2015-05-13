@@ -28,7 +28,7 @@ lines code :)
 var asyncSum = async(function *sum(a, b) {
 	var valueA = yield a
 	var valueB = yield b
-	return a + b
+	return valueA + valueB
 })
 
 var asyncResult = asyncSum(Promise.resolve(1), waitAndReturn(1000, 2))
