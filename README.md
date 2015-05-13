@@ -15,7 +15,7 @@ use it!
 
 There are also many other libraries which provide the same functionality
 such as [co](https://github.com/tj/co). The advantage of this project is,
-it's very simple, only 40 lines code :)
+it's very simple, only [30 lines code](https://github.com/hax/async.js/blob/master/src/index.js) :)
 
 
 ## Introduction
@@ -43,3 +43,7 @@ function waitAndReturn(ms, value) {
 	})
 }
 ```
+
+### TODO
+
+  - Add commented version
