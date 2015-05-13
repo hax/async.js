@@ -1,0 +1,19 @@
+{
+  "name": "async.js",
+  "version": "1.0.0",
+  "description": "async function wrapper",
+  "devDependencies": {
+    "babel": "^5.3.1",
+    "del": "^1.1.1",
+    "gulp": "^3.8.11",
+    "gulp-babel": "^5.1.0",
+    "node-fetch": "^1.2.1"
+  },
+  "scripts": {
+    "dev": "gulp dev",
+    "test": "babel-node test"
+  },
+  "repository": "hax/async.js",
+  "author": "HE Shi-Jun <johnhax@gmail.com>",
+  "license": "ISC"
+}
