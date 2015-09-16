@@ -10,7 +10,7 @@ just use them. And eventually JavaScript engines in the browsers and
 node.js/io.js will also support async/await natively.
 
 The only exception is if you can not use transpilers for any reason or
-your transpilers has not supported async/await feature, you could just
+your transpilers have not supported async/await feature, you could just
 use it!
 
 There are also many other libraries which provide the same functionality
@@ -26,21 +26,15 @@ it's very simple, only [30 lines code](https://github.com/hax/async.js/blob/mast
 
 ```js
 var asyncSum = async(function *sum(a, b) {
-	var valueA = yield a
-	var valueB = yield b
-	return valueA + valueB
+	return (yield a) + (yield b)
 })
 
 var asyncResult = asyncSum(Promise.resolve(1), waitAndReturn(1000, 2))
 
-asyncResult.then(function (value) {
-	console.assert(value === 3)
-})
+asyncResult.then(v => console.assert(v === 3))
 
 function waitAndReturn(ms, value) {
-	return new Promise(function (resolve) {
-		setTimeout(function () { resolve(value) }, ms)
-	})
+	return new Promise(resolve => setTimeout(() => resolve(value), ms))
 }
 ```
 

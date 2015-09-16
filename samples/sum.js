@@ -11,14 +11,12 @@ var asyncSum = async(function *sum(a, b) {
 var asyncResult = asyncSum(Promise.resolve(1), waitAndReturn(1000, 2))
 
 console.time('async sum')
-asyncResult.then(function (value) {
-	console.assert(value === 3)
+asyncResult.then(value => {
 	console.timeEnd('async sum')
 	console.log('result:', value)
+	console.assert(value === 3)
 })
 
 function waitAndReturn(ms, value) {
-	return new Promise(function (resolve) {
-		setTimeout(function () { resolve(value) }, ms)
-	})
+	return new Promise(resolve => setTimeout(() => resolve(value), ms))
 }
