@@ -12,8 +12,8 @@ export default function fetch(url, {method, headers, body} = {}) {
 		.then(content => new Response(content, { status: 200 }))
 		.catch(error => {
 			let status
-			switch (err.code) {
-				case 'ENOENT': status = 404
+			switch (error.code) {
+				case 'ENOENT': status = 404; break
 				default: status = 400
 			}
 			return new Response('Error', { status, statusText: error.message })
@@ -34,7 +34,7 @@ function getFileContent(filename) {
 
 
 export class Response {
-	constructor(body:BodyInit, {status = 200, statusText = 'OK', headers}:ResponseInit = {}) {
+	constructor(body, {status = 200, statusText = 'OK', headers} = {}) {
 		this._body = body
 		this._status = status
 		this._statusText = statusText

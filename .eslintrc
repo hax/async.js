@@ -1,0 +1,10 @@
+---
+  extends: standard
+
+  rules:
+    indent: [2, tab, SwitchCase: 1]
+    comma-dangle: [2, always-multiline]
+    no-multiple-empty-lines: [2, max: 2]
+    space-before-function-paren: [2, {anonymous: always, named: never}]
+    padded-blocks: 0
+    generator-star-spacing: [2, before]

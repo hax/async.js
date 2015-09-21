@@ -1,3 +1,5 @@
+/* eslint-disable no-throw-literal, no-unreachable, no-unused-vars */
+
 let tests = Promise.resolve()
 
 function test(name, asyncFunc) {

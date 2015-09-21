@@ -15,7 +15,7 @@ const fetchAndConcat = async(function *(urls) {
 
 	const sources = yield Promise.race([
 		fetchFiles,
-		sleep(3000).then(() => { throw 'Timeout!' })
+		sleep(3000).then(() => { throw new Error('Timeout!') }),
 	])
 
 	const src = sources.map(res => res.text()).join('\n;;;;\n\n')
@@ -26,6 +26,6 @@ fetchAndConcat([
 	'./fetch.js',
 	'./util.js',
 	'./concat.js',
-	])
-	.then(v => console.log('result:', v))
-	.catch(e => console.error(e.stack || e))
+])
+.then(v => console.log('result:', v))
+.catch(e => console.error(e.stack || e))

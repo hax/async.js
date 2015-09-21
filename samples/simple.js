@@ -1,5 +1,5 @@
 import async from '../src'
-import {asap, sleep, wait, par} from './util'
+import {sleep, wait, par} from './util'
 
 wait1sec(3)
 	.then(v => par(next(v), prev(v)))
@@ -8,7 +8,8 @@ wait1sec(3)
 
 async(function *() {
 	const v = yield wait1sec(3)
-	const a = next(v), b = prev(v)
+	const a = next(v)
+	const b = prev(v)
 	yield sleep(1000)
 	console.log('async/await version:', a, b)
 })()
