@@ -50,3 +50,5 @@ function async(generator) {
 }
 
 module.exports = exports["default"];
+
+//# sourceMappingURL=async.js.map
