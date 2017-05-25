@@ -1,5 +1,7 @@
 # async.js -- async function wrapper
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/hax/async.js.svg)](https://greenkeeper.io/)
+
 
 ## Note
 
